@@ -2,6 +2,6 @@
  Platform.Load("core", "1.1.1");
  var prox = new Script.Util.WSProxy();
  var res = prox.describe("Loyalty_HMK");
- Write("Debug Git");
+ Write("Debug Git <br/>");
  Write (Stringify(res));
 </script>
