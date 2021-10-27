@@ -1,5 +1,10 @@
+<table border="1" cellspacing="0" cellpadding="1" bordercolor="#000000" style="color:#000000;font-family:Arial;">
+  <tr>
+      <th>Name</th>
+      <th>isRetrievable</th>
+  </tr>
 <script runat="server">
- Platform.Load("core", "1.1.1");
+Platform.Load("Core","1.1.1");
 try{ 
     var prox = new Script.Util.WSProxy();
     var data = prox.describe("DataExtension")
@@ -19,3 +24,4 @@ Write("<tr>");
   Write(Stringify(err));
 }
 </script>
+</table>
