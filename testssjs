@@ -1,7 +1,21 @@
 <script runat="server">
  Platform.Load("core", "1.1.1");
- var prox = new Script.Util.WSProxy();
- var res = prox.describe("Loyalty_HMK");
- Write("Debug Git 1<br/>");
- Write (Stringify(res.Results));
+try{ 
+    var prox = new Script.Util.WSProxy();
+    var data = prox.describe("Loyalty_HMK")
+    var resultProperties = data.Results[0].Properties;
+    
+    for ( i in resultProperties ) {
+      var colName = resultProperties[i].Name;
+      var Retrievable = resultProperties[i].IsRetrievable;
+      
+      var color = (Retrievable == true) ? "#228C22" : "#8B0000";
+Write("<tr>");
+      Write("<td>" + resultProperties[i].Name + "</td>");
+      Write('<td style="color:' + color + '">' + resultProperties[i].IsRetrievable + '</td>');       
+      Write("</tr>");
+    }
+}catch(err){
+  Write(Stringify(err));
+}
 </script>
