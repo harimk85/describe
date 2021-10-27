@@ -2,7 +2,7 @@
  Platform.Load("core", "1.1.1");
 try{ 
     var prox = new Script.Util.WSProxy();
-    var data = prox.describe("Loyalty_HMK")
+    var data = prox.describe("DataExtension")
     var resultProperties = data.Results[0].Properties;
     
     for ( i in resultProperties ) {
